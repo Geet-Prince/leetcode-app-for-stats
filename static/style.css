@@ -1,0 +1,233 @@
+/* =================================
+   Basic Reset & Global Styles
+   ================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #000000;
+    color: #ffffff;
+    padding-top: 80px; /* Space for fixed header */
+    padding-bottom: 40px;
+}
+
+/* =================================
+   Main Layout & Containers
+   ================================= */
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =================================
+   Input & Buttons
+   ================================= */
+#input-section {
+    width: 90%;
+    max-width: 400px;
+    margin-top: 20vh;
+}
+
+#username-input {
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+    text-align: center;
+    color: #fff;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    outline: none;
+    margin-bottom: 1rem;
+}
+#username-input:focus {
+    border-color: #4A90E2;
+}
+
+button {
+    width: 100%;
+    padding: 16px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:active {
+    background-color: #d0d0d0;
+    transform: scale(0.98);
+}
+
+#logout-button {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    margin-top: 1.5rem;
+}
+
+/* =================================
+   Stats, Charts & Cards
+   ================================= */
+#stats-section {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.stats-grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.two-cols {
+    grid-template-columns: 1fr 1fr;
+}
+
+.stat-card {
+    background-color: #1c1c1e;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.stat-card h4 {
+    font-size: 0.8rem;
+    color: #8e8e93;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+}
+
+.stat-card p {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.chart-container {
+    background-color: #1c1c1e;
+    padding: 1rem;
+    border-radius: 12px;
+}
+
+.chart-container h4 {
+    font-size: 0.9rem;
+    color: #8e8e93;
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+
+/* =================================
+   Heatmap Calendar
+   ================================= */
+.heatmap-section-container {
+    background-color: #1c1c1e;
+    padding: 1rem;
+    border-radius: 12px;
+    /* No horizontal scrolling needed for the compact view */
+}
+
+.heatmap-header {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.heatmap-header h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.heatmap-legend {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.8rem;
+    color: #8e8e93;
+}
+
+.heatmap-legend b {
+    color: #fff;
+    font-weight: 600;
+}
+
+#heatmap-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: repeat(7, 1fr);
+    gap: 4px;
+}
+
+.heatmap-day {
+    aspect-ratio: 1 / 1;
+    min-width: 10px;
+    background-color: #2d2d2d;
+    border-radius: 3px;
+}
+
+/* Contribution colors (streaks are green) */
+.day-level-0 { background-color: #2d2d2d; }
+.day-level-1 { background-color: #0e4429; }
+.day-level-2 { background-color: #006d32; }
+.day-level-3 { background-color: #26a641; }
+.day-level-4 { background-color: #39d353; }
+
+
+/* =================================
+   Loading Spinner
+   ================================= */
+#loading-indicator {
+    text-align: center;
+    margin-top: 20vh;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-left-color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

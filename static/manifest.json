@@ -1,0 +1,21 @@
+{
+  "name": "Geet-prince 👑",
+  "short_name": "Geet-prince",
+  "start_url": ".",
+  "display": "fullscreen",
+  "background_color": "#000000",
+  "theme_color": "#1c1c1e",
+  "description": "A comprehensive LeetCode stats dashboard.",
+  "icons": [
+    {
+      "src": "/static/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/static/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

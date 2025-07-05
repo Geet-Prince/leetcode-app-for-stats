@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Geet-prince 👑</title>
+    
+    <link rel="manifest" href="{{ url_for('static', filename='manifest.json') }}">
+    <meta name="theme-color" content="#1c1c1e">
+    <link rel="apple-touch-icon" href="{{ url_for('static', filename='assets/icon-192.png') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <header><h1>👑 Geet-prince</h1></header>
+
+        <section id="input-section">
+            <input type="text" id="username-input" placeholder="Enter LeetCode Username" autocomplete="off" autocapitalize="none">
+            <button id="save-button">View Stats</button>
+        </section>
+        
+        <div id="loading-indicator" class="hidden">
+            <div class="spinner"></div>
+            <p>Fetching Royal Stats...</p>
+        </div>
+
+        <section id="stats-section" class="hidden">
+            <!-- Core Stats -->
+            <div class="stats-grid two-cols">
+                <div class="stat-card">
+                    <h4>Total Solved</h4>
+                    <p id="total-solved">_</p>
+                </div>
+                <div class="stat-card">
+                    <h4>Ranking</h4>
+                    <p id="ranking">_</p>
+                </div>
+            </div>
+
+            <!-- Difficulty Breakdown (Graphical Data) -->
+            <div class="chart-container">
+                <h4>Difficulty Breakdown</h4>
+                <canvas id="difficultyChart"></canvas>
+            </div>
+
+            <!-- Activity Heatmap Section -->
+            <div class="heatmap-section-container">
+                <div class="heatmap-header">
+                    <h4 id="total-submissions-year">_ submissions in the past year</h4>
+                    <div class="heatmap-legend">
+                        <span>Total active days: <b id="total-active-days">_</b></span>
+                        <span>Max streak: <b id="max-streak">_</b></span>
+                    </div>
+                </div>
+                <div id="heatmap-container">
+                    <!-- JS will generate the heatmap grid here -->
+                </div>
+            </div>
+            
+            <button id="logout-button">Logout</button>
+        </section>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
